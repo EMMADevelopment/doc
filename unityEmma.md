@@ -2,9 +2,7 @@
 
 1. *First we’ll need to override the ‘UnityAppController’ class with our own version. To do this we need to create in the Assets folder of your Unity project a ‘Plugins’ folder and inside this folder add a ‘iOS’ folder. So your structure needs to look like this*:
 
-    Assets
-        Plugins
-            iOS
+    Assets/Plugins/iOS
 
 *Make sure you name everything correct otherwise it will not work. Unity checks if these folders exists and copy all their contents to the Xcode project*.
 
