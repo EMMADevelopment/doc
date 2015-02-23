@@ -16,7 +16,7 @@
 
 4. **Now the important part**: *don’t edit the file in this Xcode project, because it will be overwritten every time you do a new Unity build! Instead go to Unity and double-click on the file (it will also open in Xcode). Now we can override Unity’s AppController class with the following code*.
 
-<pre><code>
+```
 #import <UIKit/UIKit.h>
 #import "UnityAppController.h"
 #import "UI/UnityView.h"
@@ -54,4 +54,4 @@
 @end
  
 IMPL_APP_CONTROLLER_SUBCLASS(eMMaAppController)
-</code></pre>
+```
