@@ -4,13 +4,13 @@
 
     Assets/Plugins/iOS
 
-*Make sure you name everything correct otherwise it will not work. Unity checks if these folders exists and copy all their contents to the Xcode project*.
+    *Make sure you name everything correct otherwise it will not work. Unity checks if these folders exists and copy all their contents to the Xcode project*.
 
 2. *Copy all files from eMMa iOS SDK*:
 
 - eMMa.h
 - eMMaDefines.h
-- eMMa-Universal-static.a 
+- eMMa-Universal-static.a
 
 3. *Now you need to create a file in the iOS folder like “eMMaAppController.mm”. You can call yours whatever you want it to be*.
 
