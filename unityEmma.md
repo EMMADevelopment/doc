@@ -18,41 +18,42 @@
 
 4. **Now the important part**: *don’t edit the file in this Xcode project, because it will be overwritten every time you do a new Unity build! Instead go to Unity and double-click on the file (it will also open in Xcode). Now we can override Unity’s AppController class with the following code*.
 
+<pre><code>
 #import <UIKit/UIKit.h>
-#import “UnityAppController.h”
-#import “UI/UnityView.h”
-#import “UI/UnityViewControllerBase.h”
-#import “eMMa.h”
+#import "UnityAppController.h"
+#import "UI/UnityView.h"
+#import "UI/UnityViewControllerBase.h"
+#import "eMMa.h"
 
  
 @interface eMMaAppController : UnityAppController
  
-(void)createViewHierarchyImpl;
+-(void)createViewHierarchyImpl;
  
 @end
  
 @implementation eMMaAppController
- 
-(void)createViewHierarchyImpl {
- 
-		# Start sessiom with eMMa and your Session Key
-		[eMMa starteMMaSession:@“YOURSESSIONKEY”];
 
-		# Also, if needed, you can track location using 
-		[eMMa trackLocation];
-
-		# Create view hierarchy
+-(void)createViewHierarchyImpl {
+    
+    // Start sessiom with eMMa and your Session Key
+    [eMMa starteMMaSession:@"YOURSESSIONKEY"];
+    
+    // Also, if needed, you can track location using
+    [eMMa trackLocation];
+    
+    // Create view hierarchy
     _rootController = [[UIViewController alloc] init];
     _rootView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _rootController.view = _rootView;
-
-    	# Recover Unity focus
-		[self.view addSubview:GetAppController().unityView];
+    
+    // Recover Unity focus
+    [self.view addSubview:GetAppController().unityView];
     GetAppController().unityView.frame = self.view.frame;
-
+    
 }
  
 @end
  
 IMPL_APP_CONTROLLER_SUBCLASS(eMMaAppController)
-
+</code></pre>
