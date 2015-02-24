@@ -1,4 +1,4 @@
-# iOS INSTALLATION
+# UNITY iOS PLUGIN INSTALLATION
 
 1. First we’ll need to override the ‘UnityAppController’ class with our own version. To do this we need to create in the Assets folder of your Unity project a ‘Plugins’ folder and inside this folder add a ‘iOS’ folder. So your structure needs to look like this:
 
@@ -8,7 +8,7 @@
 
 2. Make sure you name everything correct otherwise it will not work. Unity checks if these folders exists and copy all their contents to the Xcode project.
 
-3. Copy all files from eMMa iOS SDK:  
+3. Copy all files from eMMa iOS SDK in the iOS folder:  
 
  ```
  - eMMa.h 
@@ -59,3 +59,5 @@
   
  IMPL_APP_CONTROLLER_SUBCLASS(eMMaAppController)
  ```
+
+6. Especially the IMPL_APP_CONTROLLER_SUBCLASS bit is important, as this is the way to set a custom app controller!  What happens is IMPL_APP_CONTROLLER_SUBCLASS is defined in UnityAppController.h and this will set our AppController as the one to be loaded! Now in the ‘createViewHierarchyImpl’ methode we can set our own view hierarchy.
